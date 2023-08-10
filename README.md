@@ -26,3 +26,6 @@ This connector can work with major CI/CD tools like:
 
 ## Command to trigger and watch an execution
 ```fly -t sqa-connector trigger-job -j {suite_name_or_id}/suite-execution-build-trigger && fly -t sqa-connector watch -j {suite_name_or_id}/suite-execution-build-trigger```
+
+## Command to watch build logs of a specific job with build number
+```fly -t sqa-connector watch --job {{suite_name_or_id}}/suite-execution-build-trigger --build NUM```
