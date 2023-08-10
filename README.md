@@ -6,7 +6,8 @@ This connector can work with major CI/CD tools like:
   - Gitlab CI
   - Bamboo CI
   - Azure Pipeline
-<hr>                          
+<hr>   
+
 <h1 style="text-align: center;">INTEGRATION WITH CONCOURSE CI</h1>
 
 ## Command to set the target:
