@@ -1,5 +1,11 @@
 # simplifyqa-connector
-CI/CD connector build for SimplifyQA
+CI/CD connector build for SimplifyQA.
+This connector can work with major CI/CD tools like:
+  - Jenkins
+  - Concourse CI
+  - Gitlab CI
+  - Bamboo CI
+  - Azure Pipeline
 
 # Command to set the target:
 fly -t sqa-connector login -c http://localhost:8080 -u test -p test
