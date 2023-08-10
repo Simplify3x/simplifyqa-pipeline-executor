@@ -11,7 +11,7 @@ fly targets
 fly -t sqa-connector builds
 
 # Command to set a new pipeline
-fly -t sqa-connector set-pipeline --pipeline sqa-connector-pipeline --config set-pipeline.yml --var "GIT_URL=https://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@github.com/bernardbdas/simplifyqa-connector.git" --var "BRANCH_NAME=main" --var "PAT_SQA_CONNECTOR=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" --var "PSK_SQA_CONNECTOR=" --var "BUILD_API=https://simplifyqa.app/jenkinsSuiteExecution" --var "STATUS_API=https://simplifyqa.app/getJenkinsExecStatus" --var "EXEC_TOKEN=U2FsdGVkX1/LE6BCW0wSDHZFIJr1b773GXHGFHaQyYmwOrZXJAMo50ZeDaLtiaKdaOT2bb/HwBOGlOdSrLvpHA=="
+fly -t sqa-connector set-pipeline --pipeline sqa-connector-pipeline --config set-pipeline.yml --var "GIT_URL=https://{personal_access_token}@github.com/bernardbdas/simplifyqa-connector.git" --var "BRANCH_NAME=main" --var "PAT_SQA_CONNECTOR={personal_access_token}" --var "PSK_SQA_CONNECTOR=" --var "BUILD_API=https://simplifyqa.app/jenkinsSuiteExecution" --var "STATUS_API=https://simplifyqa.app/getJenkinsExecStatus" --var "EXEC_TOKEN={execution_token}"
 
 # Command to destroy the pipeline
 fly -t sqa-connector destroy-pipeline --pipeline sqa-connector-pipeline
