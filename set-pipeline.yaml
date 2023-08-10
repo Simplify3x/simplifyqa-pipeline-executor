@@ -1,0 +1,47 @@
+---
+resources:
+  - name: sqa-connector-config
+    type: git
+
+    source:
+      branch: ((BRANCH_NAME))
+      uri: ((GIT_URL))
+      access_token: ((PAT_SQA_CONNECTOR))
+
+jobs:
+  - name: suite-execution-build-trigger
+    serial: true
+
+    plan:
+      - get: sqa-connector-config
+        trigger: true
+
+      - task: build
+        privileged: true
+
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: maven
+              tag: latest
+
+          inputs:
+            - name: sqa-connector-config
+          outputs:
+            - name: build_out
+
+          params:
+            branch: ((BRANCH_NAME))
+          run:
+            path: /bin/bash
+            args:
+              - -exec
+              - |
+                ls
+                cd sqa-connector-config
+                mvn --version
+                mvn test
+                mvn clean install
+                java -jar target\connector-1.0-jar-with-dependencies.jar ((BUILD_API)) ((STATUS_API)) ((EXEC_TOKEN))
