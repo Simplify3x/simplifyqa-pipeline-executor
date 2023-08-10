@@ -2,11 +2,21 @@
 resources:
   - name: sqa-connector-config
     type: git
+    icon: github
 
     source:
-      branch: ((BRANCH_NAME))
       uri: ((GIT_URL))
+      branch: ((BRANCH_NAME))
       access_token: ((PAT_SQA_CONNECTOR))
+
+  # Where we will push the image to
+  # - name: sqa-conn-image
+    # type: registry-image
+    # icon: docker
+    # source:
+      # repository: ((image-repo-name))/sqa-conn-image
+      # username: ((registry-username))
+      # password: ((registry-password))
 
 jobs:
   - name: suite-execution-build-trigger
@@ -40,8 +50,12 @@ jobs:
               - -exec
               - |
                 ls
-                cd sqa-connector-config
+                cd sqa-connector-config/connector
                 mvn --version
                 mvn test
                 mvn clean install
-                java -jar target\connector-1.0-jar-with-dependencies.jar ((BUILD_API)) ((STATUS_API)) ((EXEC_TOKEN))
+                java -jar target/connector-1.0-jar-with-dependencies.jar ((BUILD_API)) ((STATUS_API)) ((EXEC_TOKEN))
+
+      # - put: sqa-conn-image
+      #   params:
+      #     image: image/image.tar

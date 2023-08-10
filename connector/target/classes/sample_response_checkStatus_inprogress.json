@@ -6,18 +6,40 @@
       "execution": "INPROGRESS",
       "result": [
         {
-          "tcId": 97098,
+          "tcId": 3835,
           "tcSeq": 1,
-          "tcIdSeq": "97098-1",
+          "tcIdSeq": "3835-1",
           "tcVersion": 1,
-          "tcCode": "TC-335697098",
+          "tcCode": "TC-23835",
+          "result": "Passed",
+          "resultItr": [{ "itr": 1, "resultTc": "Passed" }],
+          "totalSteps": 10,
+          "tcName": "Orange HRM 1"
+        },
+        {
+          "tcId": 3828,
+          "tcSeq": 2,
+          "tcIdSeq": "3828-2",
+          "tcVersion": 1,
+          "tcCode": "TC-23828",
+          "result": "Passed",
+          "resultItr": [{ "itr": 1, "resultTc": "Passed" }],
+          "totalSteps": 10,
+          "tcName": "Orange HRM 2"
+        },
+        {
+          "tcId": 3809,
+          "tcSeq": 3,
+          "tcIdSeq": "3809-3",
+          "tcVersion": 1,
+          "tcCode": "TC-23809",
           "result": "Inprogress",
           "resultItr": [{ "itr": 1, "resultTc": "Inprogress" }],
-          "totalSteps": 1,
-          "tcName": "dns resolve"
+          "totalSteps": 10,
+          "tcName": "Orange HRM 4"
         }
       ],
-      "reporturl": "https://simplifyqa.app/user/reports/189/564447"
+      "reporturl": "https://demo.simplifyqa.app/user/reports/4/10964"
     }
   }
 }
