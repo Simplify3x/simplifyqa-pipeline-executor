@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public class driver {
-	public static void main(String... args) throws IOException, InterruptedException, ParseException, ParseException {
+	public static void main(String[] args) throws IOException, InterruptedException, ParseException, ParseException {
 
 		String build_task_api = args[0];
 		String check_status_api = args[1];
