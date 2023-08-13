@@ -34,7 +34,7 @@ public class Connector {
 
 	// API LINKS
 	private static String build_task_api, check_status_api;
-	private String temp, info_str = "";
+	private String temp = "", info_str = "";
 
 	StringBuilder logs = new StringBuilder();
 	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
@@ -46,11 +46,13 @@ public class Connector {
 
 	JSONObject exec_info = new JSONObject();
 	private int WAIT_TIME = 3000;
-	private double execution_percent;
+	private double execution_percent, threshold;
 
 	// connector constructor called by the ci/cd
-	Connector(String token, String build_task_api, String check_status_api, int WAIT_TIME)
+	Connector(String token, String build_task_api, String check_status_api, int WAIT_TIME, int threshold)
 			throws IOException, ParseException {
+
+		this.threshold = Double.valueOf(threshold);
 
 		// poll rate for logs
 		this.WAIT_TIME = WAIT_TIME;
@@ -75,6 +77,18 @@ public class Connector {
 					new TypeReference<Map<String, Object>>() {
 					});
 
+			if (!Boolean.parseBoolean(map.get("success").toString())) {
+				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
+						+ "EXECUTION STATUS: failed due to the following reason: " + map.get("error").toString()
+						+ "\n\n";
+
+				System.out.print(this.temp);
+				logs.append(this.temp);
+
+				System.out.println("EXECUTION FAILED: Exiting with a non-zero exit code.");
+				System.exit(1);
+			}
+
 			// REQUEST BODY FOR CHECK TESTCASE STATUS API CALL
 			// check_status_request_body.put("token", token);
 			check_status_request_body.put("success", Boolean.parseBoolean(map.get("success").toString()));
@@ -85,8 +99,12 @@ public class Connector {
 		} else {
 			this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 					+ "EXECUTION STATUS: CONNECTION ERROR!" + "\n\n";
+
 			System.out.print(this.temp);
 			logs.append(this.temp);
+
+			System.out.println("EXECUTION FAILED: Exiting with a non-zero exit code.");
+			System.exit(1);
 		}
 
 		post_connection.disconnect();
@@ -331,10 +349,21 @@ public class Connector {
 					"POST");
 			this.exec_info = new JSONObject(this.get_response(conn));
 
-			if (executed_tc_count == total_tc_count) {
+			if (this.threshold < 0.00) {
+				this.threshold = Double.valueOf(1.00 / Double.valueOf(total_tc_count))
+						* 100.00;
+			}
+
+			if (this.threshold > ((Double.valueOf(total_tc_count - executed_tc_count)
+					/ Double.valueOf(total_tc_count)) * 100.00)) {
 
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
-						+ "EXECUTION STATUS: suite EXECUTION COMPLETED (fail percentage: 0.00 % )\n\n";
+						+ "EXECUTION STATUS: suite EXECUTION PASSED (fail percentage: " + String.format("%.2f",
+								((Double.valueOf(total_tc_count - executed_tc_count)
+										/ Double.valueOf(total_tc_count))
+										* 100.00))
+						+ " % )\n\n";
+
 				exec_flag = true;
 
 			} else {
@@ -342,8 +371,11 @@ public class Connector {
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 						+ "EXECUTION STATUS: suite EXECUTION FAILED (fail percentage: "
 						+ String.format("%.2f",
-								((Double.valueOf(executed_tc_count) / Double.valueOf(total_tc_count)) * 100.00))
+								((Double.valueOf(total_tc_count - executed_tc_count)
+										/ Double.valueOf(total_tc_count))
+										* 100.00))
 						+ " % )\n\n";
+
 				exec_flag = false;
 
 			}
@@ -358,8 +390,16 @@ public class Connector {
 
 			return exec_flag;
 		} else {
+			this.exec_info = new JSONObject(this.get_response(conn));
+
+			if (include_response_body)
+				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
+						+ "RESPONSE BODY: " + this.exec_info.toString() + "\n\n";
+
 			this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
-					+ "EXECUTION STATUS: test suite EXECUTION TRIGGER FAILED (due to bad response code)" + "\n\n";
+					+ "EXECUTION STATUS: test suite EXECUTION TRIGGER FAILED (due to bad response code)" + "\n\n"
+					+ this.temp;
+
 			System.out.print(this.temp);
 			logs.append(this.temp);
 
