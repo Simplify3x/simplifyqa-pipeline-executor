@@ -1,0 +1,36 @@
+{
+  "icon_url": "https://demo.simplifyqa.app/QA-red-bg.ddbb8cb773bc7f51.jpg",
+  "attachments": [
+    {
+      "color": "#accent",
+      "blocks": [
+        {
+          "type": "header",
+          "text": {
+            "type": "plain_text",
+            "text": "#header",
+            "emoji": true
+          }
+        },
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "#message"
+          },
+          "accessory": {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "View Report",
+              "emoji": true
+            },
+            "value": "View Report",
+            "url": "#reportURL",
+            "action_id": "button-action"
+          }
+        }
+      ]
+    }
+  ]
+}
