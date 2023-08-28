@@ -67,6 +67,7 @@ public class Executor {
 
 		// poll rate for logs
 		this.POLL_RATE = POLL_RATE;
+		this.threshold = Double.valueOf(threshold);
 
 		Executor.build_task_api = build_task_api;
 		Executor.check_status_api = check_status_api;
@@ -99,7 +100,8 @@ public class Executor {
 						+ "EXECUTION STATUS: failed due to the following reason: " + this.map.get("error").toString()
 						+ "\n\n";
 
-				if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id, this.suite_id,
+				if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id,
+						"SU-" + this.customer_id + this.suite_id,
 						this.current_threshold,
 						this.report_url,
 						this.logs.toString()))
@@ -151,7 +153,8 @@ public class Executor {
 			this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 					+ "EXECUTION STATUS: CONNECTION ERROR!" + "\n\n";
 
-			if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id, this.suite_id, this.current_threshold,
+			if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id,
+					"SU-" + this.customer_id + this.suite_id, this.current_threshold,
 					this.report_url,
 					this.logs.toString()))
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
@@ -239,7 +242,7 @@ public class Executor {
 	boolean getExecInfo(boolean include_request_body, boolean include_response_body)
 			throws IOException, InterruptedException, JSONException {
 
-		int total_tc_count = this.total_tc_count, limit = 0, totalSteps, executed_steps, executed_tc_count = 0,
+		int limit = 0, totalSteps, executed_steps, executed_tc_count = 0,
 				prev_executed_tc_count = -1;
 		int tc_total_steps, current_step;
 		String tc_name, tc_id;
@@ -300,7 +303,7 @@ public class Executor {
 					.parseInt(exec_info.getJSONObject("data").getJSONObject("data").get("totalTestcases").toString());
 
 			if (threshold < 0)
-				this.threshold = Double.valueOf((1.00 / total_tc_count) * 100.00);
+				this.threshold = Double.valueOf((1.00 / Double.valueOf(this.total_tc_count)) * 100.00);
 
 			// To check whether execution is in-progress or completed
 			while (!(exec_info.getJSONObject("data").getJSONObject("data").get("execution").toString().toUpperCase())
@@ -308,7 +311,7 @@ public class Executor {
 					&& this.threshold >= this.current_threshold) {
 
 				this.current_threshold = ((Double.valueOf(limit - executed_tc_count)
-						/ Double.valueOf(total_tc_count)) * 100.00);
+						/ Double.valueOf(this.total_tc_count)) * 100.00);
 				executed_steps = 0;
 				Thread.sleep(this.POLL_RATE);
 
@@ -330,7 +333,7 @@ public class Executor {
 				// + "EXECUTION STATUS: suite EXECUTION IN-PROGRESS with completion rate of "
 				// + String.format("%2.2f", this.execution_percent) + " % (executed " +
 				// executed_tc_count + " of "
-				// + total_tc_count + " testcase(s))\n";
+				// + this.total_tc_count + " testcase(s))\n";
 
 				totalSteps = 0;
 				executed_tc_count = 0;
@@ -425,7 +428,7 @@ public class Executor {
 
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 						+ "EXECUTION STATUS: suite EXECUTION IN-PROGRESS (executed " + executed_tc_count + " of "
-						+ total_tc_count + " testcase(s))\n" + this.info_str;
+						+ this.total_tc_count + " testcase(s))\n" + this.info_str;
 
 				if (prev_executed_tc_count < executed_tc_count) {
 					System.out.print(this.temp);
@@ -459,11 +462,11 @@ public class Executor {
 			}
 
 			if (this.threshold < 0.00) {
-				this.threshold = Double.valueOf(1.00 / Double.valueOf(total_tc_count))
+				this.threshold = Double.valueOf(1.00 / Double.valueOf(this.total_tc_count))
 						* 100.00;
 			}
 
-			if (this.threshold >= this.current_threshold) {
+			if (this.threshold > this.current_threshold) {
 
 				this.temp = this.temp + "[" + dtf.format(LocalDateTime.now()) + "] "
 						+ "EXECUTION STATUS: suite EXECUTION PASSED (fail percentage: "
@@ -486,7 +489,8 @@ public class Executor {
 					+ this.report_url
 					+ "\n\n";
 
-			if (Slackbot.sendlogs(exec_flag, "EX-" + this.customer_id + this.exec_id, this.suite_id,
+			if (Slackbot.sendlogs(exec_flag, "EX-" + this.customer_id + this.exec_id,
+					"SU-" + this.customer_id + this.suite_id,
 					this.current_threshold,
 					this.report_url,
 					this.logs.toString()))
@@ -517,8 +521,8 @@ public class Executor {
 					+ "EXECUTION STATUS: test suite EXECUTION TRIGGER FAILED (due to bad response code)" + "\n\n"
 					+ this.temp;
 
-			if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id, this.suite_id, this.current_threshold,
-					this.report_url,
+			if (Slackbot.sendlogs(false, "EX-" + this.customer_id + this.exec_id,
+					"SU-" + this.customer_id + this.suite_id, this.current_threshold, this.report_url,
 					this.logs.toString()))
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 						+ "EXECUTION STATUS: Slack notification sent SUCCESSFULLY!" + "\n\n"
