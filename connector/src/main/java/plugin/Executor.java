@@ -147,9 +147,6 @@ public class Executor {
 			// this.request_headers,
 			// this.search_api_request_body);
 
-			if (threshold < 0)
-				this.threshold = Double.valueOf((1.00 / total_tc_count) * 100.00);
-
 		} else {
 			this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 					+ "EXECUTION STATUS: CONNECTION ERROR!" + "\n\n";
@@ -301,6 +298,9 @@ public class Executor {
 			this.suite_id = exec_info.getJSONObject("data").getJSONObject("data").get("suiteId").toString();
 			this.total_tc_count = Integer
 					.parseInt(exec_info.getJSONObject("data").getJSONObject("data").get("totalTestcases").toString());
+
+			if (threshold < 0)
+				this.threshold = Double.valueOf((1.00 / total_tc_count) * 100.00);
 
 			// To check whether execution is in-progress or completed
 			while (!(exec_info.getJSONObject("data").getJSONObject("data").get("execution").toString().toUpperCase())
