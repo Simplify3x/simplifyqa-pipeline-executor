@@ -236,14 +236,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
-					if (args[3].startsWith("http://") || args[3].startsWith("https://")
-							|| args[3].split(".").length == 4)
-						search_api = args[3];
-					else {
-						System.out.println(invalid_search_api_msg + search_api);
-					}
-				}
+				// if (!args[3].equals("null")) {
+				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// 			|| args[3].split(".").length == 4)
+				// 		search_api = args[3];
+				// 	else {
+				// 		System.out.println(invalid_search_api_msg + search_api);
+				// 	}
+				// }
 
 				break;
 
@@ -270,14 +270,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
-					if (args[3].startsWith("http://") || args[3].startsWith("https://")
-							|| args[3].split(".").length == 4)
-						search_api = args[3];
-					else {
-						System.out.println(invalid_search_api_msg + search_api);
-					}
-				}
+				// if (!args[3].equals("null")) {
+				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// 			|| args[3].split(".").length == 4)
+				// 		search_api = args[3];
+				// 	else {
+				// 		System.out.println(invalid_search_api_msg + search_api);
+				// 	}
+				// }
 
 				if (!args[4].equals("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
@@ -307,14 +307,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
-					if (args[3].startsWith("http://") || args[3].startsWith("https://")
-							|| args[3].split(".").length == 4)
-						search_api = args[3];
-					else {
-						System.out.println(invalid_search_api_msg + search_api);
-					}
-				}
+				// if (!args[3].equals("null")) {
+				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// 			|| args[3].split(".").length == 4)
+				// 		search_api = args[3];
+				// 	else {
+				// 		System.out.println(invalid_search_api_msg + search_api);
+				// 	}
+				// }
 
 				if (!args[4].equals("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
@@ -347,14 +347,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
-					if (args[3].startsWith("http://") || args[3].startsWith("https://")
-							|| args[3].split(".").length == 4)
-						search_api = args[3];
-					else {
-						System.out.println(invalid_search_api_msg + search_api);
-					}
-				}
+				// if (!args[3].equals("null")) {
+				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// 			|| args[3].split(".").length == 4)
+				// 		search_api = args[3];
+				// 	else {
+				// 		System.out.println(invalid_search_api_msg + search_api);
+				// 	}
+				// }
 
 				if (!args[4].equals("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
@@ -395,14 +395,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
-					if (args[3].startsWith("http://") || args[3].startsWith("https://")
-							|| args[3].split(".").length == 4)
-						search_api = args[3];
-					else {
-						System.out.println(invalid_search_api_msg + search_api);
-					}
-				}
+				// if (!args[3].equals("null")) {
+				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// 			|| args[3].split(".").length == 4)
+				// 		search_api = args[3];
+				// 	else {
+				// 		System.out.println(invalid_search_api_msg + search_api);
+				// 	}
+				// }
 
 				if (!args[4].equals("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
@@ -483,21 +483,21 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				if (!args[8].equals("null")) {
+				// if (!args[8].equals("null")) {
 
-					if (args[8].toLowerCase().startsWith("su-"))
-						suite_id = args[8];
-					else {
-						System.out.println(invalid_suite_id_msg);
-						System.out.println("EXECUTION FAILED!");
-						System.exit(1);
-					}
+				// 	if (args[8].toLowerCase().startsWith("su-"))
+				// 		suite_id = args[8];
+				// 	else {
+				// 		System.out.println(invalid_suite_id_msg);
+				// 		System.out.println("EXECUTION FAILED!");
+				// 		System.exit(1);
+				// 	}
 
-				} else {
-					System.out.println(invalid_suite_id_msg);
-					System.out.println("EXECUTION FAILED!");
-					System.exit(1);
-				}
+				// } else {
+				// 	System.out.println(invalid_suite_id_msg);
+				// 	System.out.println("EXECUTION FAILED!");
+				// 	System.exit(1);
+				// }
 
 				break;
 
@@ -556,21 +556,21 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				if (!args[8].equals("null")) {
+				// if (!args[8].equals("null")) {
 
-					if (args[8].toLowerCase().startsWith("su-"))
-						suite_id = args[8];
-					else {
-						System.out.println(invalid_suite_id_msg);
-						System.out.println("EXECUTION FAILED!");
-						System.exit(1);
-					}
+				// 	if (args[8].toLowerCase().startsWith("su-"))
+				// 		suite_id = args[8];
+				// 	else {
+				// 		System.out.println(invalid_suite_id_msg);
+				// 		System.out.println("EXECUTION FAILED!");
+				// 		System.exit(1);
+				// 	}
 
-				} else {
-					System.out.println(invalid_suite_id_msg);
-					System.out.println("EXECUTION FAILED!");
-					System.exit(1);
-				}
+				// } else {
+				// 	System.out.println(invalid_suite_id_msg);
+				// 	System.out.println("EXECUTION FAILED!");
+				// 	System.exit(1);
+				// }
 
 				if (!args[9].equals("null")) {
 					if (args[9].startsWith("http://") || args[9].startsWith("https://")
@@ -638,21 +638,21 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				if (!args[8].equals("null")) {
+				// if (!args[8].equals("null")) {
 
-					if (args[8].toLowerCase().startsWith("su-"))
-						suite_id = args[8];
-					else {
-						System.out.println(invalid_suite_id_msg);
-						System.out.println("EXECUTION FAILED!");
-						System.exit(1);
-					}
+				// 	if (args[8].toLowerCase().startsWith("su-"))
+				// 		suite_id = args[8];
+				// 	else {
+				// 		System.out.println(invalid_suite_id_msg);
+				// 		System.out.println("EXECUTION FAILED!");
+				// 		System.exit(1);
+				// 	}
 
-				} else {
-					System.out.println(invalid_suite_id_msg);
-					System.out.println("EXECUTION FAILED!");
-					System.exit(1);
-				}
+				// } else {
+				// 	System.out.println(invalid_suite_id_msg);
+				// 	System.out.println("EXECUTION FAILED!");
+				// 	System.exit(1);
+				// }
 
 				if (!args[9].equals("null")) {
 					if (args[9].startsWith("http://") || args[9].startsWith("https://")

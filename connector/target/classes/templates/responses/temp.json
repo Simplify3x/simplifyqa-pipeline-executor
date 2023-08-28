@@ -1,0 +1,1 @@
+"\"{\"exec_token\": \"U2FsdGVkX19oWgz7aTRh1pGz9bnqPZRHXfRlcxOeA+AGnL7MUO0VkcBEKU8tZrGuKFqALpUgMGcQKehm0haBXg==\",\"build_task_api\": \"https://simplifyqa.app/jenkinsSuiteExecution\",\"check_status_api\": \"https://simplifyqa.app/getJenkinsExecStatus\",\"response_flag\": false,\"poll_rate\": 5,\"threshold\": 50}\""

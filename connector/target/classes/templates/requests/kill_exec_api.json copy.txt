@@ -1,0 +1,6 @@
+{
+  "id": #executionId,
+  "customerId": #customerId,
+  "userId": #userId,
+  "userName": "#userName"
+}

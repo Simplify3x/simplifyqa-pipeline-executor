@@ -1,0 +1,129 @@
+{
+  "success": true,
+  "data": {
+    "data": [
+      {
+        "name": "Suite 89055",
+        "notify": true,
+        "notifyPurpose": "NEW",
+        "projectId": 8386,
+        "description": "Suite 89055",
+        "deleted": false,
+        "customerId": 3356,
+        "testCases": [
+          {
+            "customerId": 3356,
+            "deleted": false,
+            "testcaseId": 53339,
+            "code": "TC-335653339",
+            "testcaseName": "TC Demo QA - 2 functions",
+            "moduleId": 2412,
+            "version": 1,
+            "versions": [
+              {
+                "version": 1,
+                "name": "v1.0",
+                "deleted": false,
+                "createdBy": 5067
+              }
+            ],
+            "versionName": "v1.0",
+            "tcType": "web",
+            "executionType": "AUTOMATION",
+            "seq": 1,
+            "stepId": "89312330-bf3a-11ec-bc2a-7d1b49118387",
+            "ischecked": false
+          },
+          {
+            "customerId": 3356,
+            "deleted": false,
+            "testcaseId": 53338,
+            "code": "TC-335653338",
+            "testcaseName": "TC 12345",
+            "moduleId": 2412,
+            "version": 1,
+            "versions": [
+              {
+                "version": 1,
+                "name": "v1.0",
+                "deleted": false,
+                "createdBy": 5067
+              }
+            ],
+            "versionName": "v1.0",
+            "tcType": "web",
+            "executionType": "AUTOMATION",
+            "seq": 2,
+            "stepId": "89312331-bf3a-11ec-bc2a-7d1b49118387",
+            "ischecked": false
+          },
+          {
+            "projectId": 8386,
+            "customerId": 3356,
+            "deleted": false,
+            "testcaseId": 53362,
+            "code": "TC-335653362",
+            "testcaseName": "Demo QA - Trial 2",
+            "moduleId": 2412,
+            "version": 1,
+            "versions": [{ "version": 1, "name": "v1.0", "deleted": false }],
+            "versionName": "v1.0",
+            "tcType": "web",
+            "executionType": "AUTOMATION",
+            "seq": 3,
+            "stepId": "2f402a40-bf3c-11ec-bc2a-7d1b49118387",
+            "ischecked": false
+          },
+          {
+            "projectId": 8386,
+            "customerId": 3356,
+            "deleted": false,
+            "testcaseId": 54807,
+            "code": "TC-335654807",
+            "testcaseName": "local protected",
+            "moduleId": 2515,
+            "version": 3,
+            "versions": [
+              {
+                "version": 1,
+                "name": "v1.0",
+                "deleted": false,
+                "createdBy": 6239
+              },
+              {
+                "version": 2,
+                "name": "v2",
+                "deleted": false,
+                "createdBy": 5067
+              },
+              {
+                "version": 3,
+                "name": "V3",
+                "deleted": false,
+                "createdBy": 5067
+              }
+            ],
+            "versionName": "V3- renamed version name",
+            "tcType": "web",
+            "executionType": "AUTOMATION",
+            "seq": 4,
+            "stepId": "b9902bd0-ed51-11ec-9bee-9964f65600ca",
+            "ischecked": false
+          }
+        ],
+        "createdBy": 5067,
+        "updatedBy": 5067,
+        "tcType": "web",
+        "copyTestData": false,
+        "createdOn": "2022-04-18T17:11:07.235Z",
+        "updatedOn": "2023-03-17T13:42:47.965Z",
+        "id": 5190,
+        "code": "SU-33565190",
+        "mailersList": [5067],
+        "state": "New",
+        "updatedByReviewApproveScript": true
+      }
+    ],
+    "totalCount": 1
+  }
+}

@@ -1,0 +1,60 @@
+{
+    "searchColumns": [
+        {
+            "column": "deleted",
+            "value": false,
+            "regEx": false,
+            "type": "boolean"
+        },
+        {
+            "column": "customerId",
+            "value": #customerId,
+            "regEx": false,
+            "type": "integer"
+        },
+        {
+            "column": "projectId",
+            "value": #projectId,
+            "regEx": false,
+            "type": "integer"
+        },
+        {
+            "column": "code",
+            "value": "#suiteId",
+            "regEx": true,
+            "type": "string",
+            "condition": "or"
+        },
+        {
+            "column": "name",
+            "value": "#suiteId",
+            "regEx": true,
+            "type": "string",
+            "condition": "or"
+        },
+        {
+            "column": "showVersion",
+            "value": "#suiteId",
+            "regEx": true,
+            "type": "string",
+            "condition": "or"
+        },
+        {
+            "column": "description",
+            "value": "#suiteId",
+            "regEx": true,
+            "type": "string",
+            "condition": "or"
+        },
+        {
+            "column": "testCases",
+            "value": "#suiteId",
+            "regEx": true,
+            "type": "length",
+            "condition": "or"
+        }
+    ],
+    "startIndex": 0,
+    "limit": 1,
+    "collection": "suites"
+}
