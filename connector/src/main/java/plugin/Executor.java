@@ -32,7 +32,7 @@ public class Executor {
 	// log the process
 
 	// Request body resources paths
-	private static String req_temp_path = "connector/src/main/resources/templates/requests/";
+	private static String req_temp_path = "src/main/resources/templates/requests/";
 	private static String build_task_req_body_path = req_temp_path + "build_task_request_body.json.txt";
 	private static String check_status_req_body_path = req_temp_path + "check_status_request_body.json.txt";
 	private static String search_api_req_body_path = req_temp_path + "search_api.json.txt";
