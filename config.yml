@@ -1,0 +1,83 @@
+---
+resources:
+  - name: sqa-connector-maven-project
+    type: git
+    icon: github
+    source:
+      uri: ((GIT_URL))
+      branch: ((BRANCH_NAME))
+
+jobs:
+  # Unit Testing of the source files
+  - name: "task1_unit_test"
+    serial: true
+
+    plan:
+      - do:
+          - get: sqa-connector-maven-project
+            trigger: true
+
+          - task: maven-unit-test-task
+            privileged: true
+
+            config:
+              platform: linux
+              image_resource:
+                type: docker-image
+                source:
+                  repository: maven
+                  tag: latest
+
+              inputs:
+                - name: sqa-connector-maven-project
+
+              params:
+                branch: ((BRANCH_NAME))
+
+              run:
+                path: /bin/bash
+                args:
+                  - -exec
+                  - |
+                    cd sqa-connector-maven-project/connector
+                    mvn test
+
+  # Building the clean maven project & Executing the built jar file
+  - name: "task2_build_trigger_suite"
+    serial: true
+
+    plan:
+      - do:
+          - get: sqa-connector-maven-project
+            passed: [task1_unit_test]
+            trigger: true
+
+          - task: maven-clean-install-task
+            privileged: true
+
+            config:
+              platform: linux
+              image_resource:
+                type: docker-image
+                source:
+                  repository: maven
+                  tag: latest
+
+              inputs:
+                - name: sqa-connector-maven-project
+
+              outputs:
+                - name: built-artifact
+
+              params:
+                branch: ((BRANCH_NAME))
+
+              run:
+                path: /bin/bash
+                args:
+                  - -exec
+                  - |
+                    cd sqa-connector-maven-project/connector
+                    mvn clean install
+                    ls -al
+                    java -jar target/connector-1.0-jar-with-dependencies.jar ((EXEC_TOKEN)) ((BUILD_API)) ((STATUS_API)) ((SEARCH_API)) ((REQ_FLAG)) ((RESP_FLAG)) ((POLL_RATE)) ((THRESHOLD)) ((SUITE_ID)) ((KILL_API)) ((SLACK_WEBHOOK))
