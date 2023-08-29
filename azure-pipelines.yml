@@ -5,9 +5,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@4
+- task: Maven@3
   inputs:
-    mavenPomFile: 'connector/pom.xml'
+    mavenPomFile: '$(system.defaultWorkingDirectory)/connector/pom.xml'
     goals: 'clean install'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
@@ -15,3 +15,21 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+  
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultWorkingDirectory)/connector/target'
+    Contents: '**/*.jar'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    preserveTimestamp: true
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- script: |
+    echo "\n******************Running Compiled JAR File******************\n"
+    cd $(Build.ArtifactStagingDirectory)
+    java -jar target/connector-1.0-jar-with-dependencies.jar $(EXEC_TOKEN) $(BUILD_API) $(STATUS_API) $(SEARCH_API) $(REQ_FLAG) $(RESP_FLAG) $(POLL_RATE) $(THRESHOLD) $(SUITE_ID) $(KILL_API) $(SLACK_WEBHOOK)
