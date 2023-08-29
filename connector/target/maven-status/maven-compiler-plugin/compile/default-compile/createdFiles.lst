@@ -1,8 +1,0 @@
-searchapi\Search.class
-plugin\Executor$1.class
-plugin\Slackbot.class
-pluginInterfaces\Execution.class
-plugin\Executor.class
-plugin\Driver.class
-pluginInterfaces\Connection.class
-plugin\Connector.class
