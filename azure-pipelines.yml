@@ -19,8 +19,15 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultWorkingDirectory)/connector/target'
-    Contents: '**/*.jar'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/target'
+    preserveTimestamp: true
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultWorkingDirectory)/connector/src'
+    Contents: '**/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/src'
     preserveTimestamp: true
     
 - task: PublishBuildArtifacts@1
