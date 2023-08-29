@@ -31,5 +31,7 @@ steps:
 
 - script: |
     echo "\n******************Running Compiled JAR File******************\n"
+    ls -al
     cd $(Build.ArtifactStagingDirectory)
+    ls -al
     java -jar target/connector-1.0-jar-with-dependencies.jar $(EXEC_TOKEN) $(BUILD_API) $(STATUS_API) $(SEARCH_API) $(REQ_FLAG) $(RESP_FLAG) $(POLL_RATE) $(THRESHOLD) $(SUITE_ID) $(KILL_API) $(SLACK_WEBHOOK)
