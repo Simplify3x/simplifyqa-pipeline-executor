@@ -163,7 +163,7 @@ public class Driver {
 				break;
 
 			case 1:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 				else {
 					System.out.println(missing_token_msg);
@@ -173,10 +173,10 @@ public class Driver {
 				break;
 
 			case 2:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -189,10 +189,10 @@ public class Driver {
 				break;
 
 			case 3:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -202,7 +202,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -214,10 +214,10 @@ public class Driver {
 				break;
 
 			case 4:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -227,7 +227,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -236,22 +236,22 @@ public class Driver {
 					}
 				}
 
-				// if (!args[3].equals("null")) {
-				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
-				// 			|| args[3].split(".").length == 4)
-				// 		search_api = args[3];
-				// 	else {
-				// 		System.out.println(invalid_search_api_msg + search_api);
-				// 	}
+				// if (!args[3].equalsIgnoreCase("null")) {
+				// if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// || args[3].split(".").length == 4)
+				// search_api = args[3];
+				// else {
+				// System.out.println(invalid_search_api_msg + search_api);
+				// }
 				// }
 
 				break;
 
 			case 5:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -261,7 +261,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -270,25 +270,25 @@ public class Driver {
 					}
 				}
 
-				// if (!args[3].equals("null")) {
-				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
-				// 			|| args[3].split(".").length == 4)
-				// 		search_api = args[3];
-				// 	else {
-				// 		System.out.println(invalid_search_api_msg + search_api);
-				// 	}
+				// if (!args[3].equalsIgnoreCase("null")) {
+				// if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// || args[3].split(".").length == 4)
+				// search_api = args[3];
+				// else {
+				// System.out.println(invalid_search_api_msg + search_api);
+				// }
 				// }
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
 				break;
 
 			case 6:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -298,7 +298,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -307,28 +307,28 @@ public class Driver {
 					}
 				}
 
-				// if (!args[3].equals("null")) {
-				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
-				// 			|| args[3].split(".").length == 4)
-				// 		search_api = args[3];
-				// 	else {
-				// 		System.out.println(invalid_search_api_msg + search_api);
-				// 	}
+				// if (!args[3].equalsIgnoreCase("null")) {
+				// if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// || args[3].split(".").length == 4)
+				// search_api = args[3];
+				// else {
+				// System.out.println(invalid_search_api_msg + search_api);
+				// }
 				// }
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				break;
 
 			case 7:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -338,7 +338,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -347,23 +347,23 @@ public class Driver {
 					}
 				}
 
-				// if (!args[3].equals("null")) {
-				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
-				// 			|| args[3].split(".").length == 4)
-				// 		search_api = args[3];
-				// 	else {
-				// 		System.out.println(invalid_search_api_msg + search_api);
-				// 	}
+				// if (!args[3].equalsIgnoreCase("null")) {
+				// if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// || args[3].split(".").length == 4)
+				// search_api = args[3];
+				// else {
+				// System.out.println(invalid_search_api_msg + search_api);
+				// }
 				// }
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				try {
-					if (!args[6].equals("null"))
+					if (!args[6].equalsIgnoreCase("null"))
 						poll_rate = Integer.parseInt(args[6]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(poll_not_num_msg);
@@ -373,10 +373,10 @@ public class Driver {
 				break;
 
 			case 8:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -386,7 +386,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -395,23 +395,23 @@ public class Driver {
 					}
 				}
 
-				// if (!args[3].equals("null")) {
-				// 	if (args[3].startsWith("http://") || args[3].startsWith("https://")
-				// 			|| args[3].split(".").length == 4)
-				// 		search_api = args[3];
-				// 	else {
-				// 		System.out.println(invalid_search_api_msg + search_api);
-				// 	}
+				// if (!args[3].equalsIgnoreCase("null")) {
+				// if (args[3].startsWith("http://") || args[3].startsWith("https://")
+				// || args[3].split(".").length == 4)
+				// search_api = args[3];
+				// else {
+				// System.out.println(invalid_search_api_msg + search_api);
+				// }
 				// }
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				try {
-					if (!args[6].equals("null"))
+					if (!args[6].equalsIgnoreCase("null"))
 						poll_rate = Integer.parseInt(args[6]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(poll_not_num_msg);
@@ -419,7 +419,7 @@ public class Driver {
 				}
 
 				try {
-					if (!args[7].equals("null"))
+					if (!args[7].equalsIgnoreCase("null"))
 						threshold = Integer.parseInt(args[7]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(threshold_not_num_msg);
@@ -429,10 +429,10 @@ public class Driver {
 				break;
 
 			case 9:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -442,7 +442,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -451,7 +451,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
+				if (!args[3].equalsIgnoreCase("null")) {
 					if (args[3].startsWith("http://") || args[2].startsWith("https://")
 							|| args[3].split(".").length == 4)
 						search_api = args[3];
@@ -460,14 +460,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				try {
-					if (!args[6].equals("null"))
+					if (!args[6].equalsIgnoreCase("null"))
 						poll_rate = Integer.parseInt(args[6]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(poll_not_num_msg);
@@ -475,7 +475,7 @@ public class Driver {
 				}
 
 				try {
-					if (!args[7].equals("null"))
+					if (!args[7].equalsIgnoreCase("null"))
 						threshold = Integer.parseInt(args[7]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(threshold_not_num_msg);
@@ -483,29 +483,29 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				// if (!args[8].equals("null")) {
+				// if (!args[8].equalsIgnoreCase("null")) {
 
-				// 	if (args[8].toLowerCase().startsWith("su-"))
-				// 		suite_id = args[8];
-				// 	else {
-				// 		System.out.println(invalid_suite_id_msg);
-				// 		System.out.println("EXECUTION FAILED!");
-				// 		System.exit(1);
-				// 	}
+				// if (args[8].toLowerCase().startsWith("su-"))
+				// suite_id = args[8];
+				// else {
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
+				// }
 
 				// } else {
-				// 	System.out.println(invalid_suite_id_msg);
-				// 	System.out.println("EXECUTION FAILED!");
-				// 	System.exit(1);
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
 				// }
 
 				break;
 
 			case 10:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -515,7 +515,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -524,7 +524,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
+				if (!args[3].equalsIgnoreCase("null")) {
 					if (args[3].startsWith("http://") || args[2].startsWith("https://")
 							|| args[3].split(".").length == 4)
 						search_api = args[3];
@@ -533,14 +533,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				try {
-					if (!args[6].equals("null"))
+					if (!args[6].equalsIgnoreCase("null"))
 						poll_rate = Integer.parseInt(args[6]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(poll_not_num_msg);
@@ -548,7 +548,7 @@ public class Driver {
 				}
 
 				try {
-					if (!args[7].equals("null"))
+					if (!args[7].equalsIgnoreCase("null"))
 						threshold = Integer.parseInt(args[7]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(threshold_not_num_msg);
@@ -556,23 +556,23 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				// if (!args[8].equals("null")) {
+				// if (!args[8].equalsIgnoreCase("null")) {
 
-				// 	if (args[8].toLowerCase().startsWith("su-"))
-				// 		suite_id = args[8];
-				// 	else {
-				// 		System.out.println(invalid_suite_id_msg);
-				// 		System.out.println("EXECUTION FAILED!");
-				// 		System.exit(1);
-				// 	}
-
-				// } else {
-				// 	System.out.println(invalid_suite_id_msg);
-				// 	System.out.println("EXECUTION FAILED!");
-				// 	System.exit(1);
+				// if (args[8].toLowerCase().startsWith("su-"))
+				// suite_id = args[8];
+				// else {
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
 				// }
 
-				if (!args[9].equals("null")) {
+				// } else {
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
+				// }
+
+				if (!args[9].equalsIgnoreCase("null")) {
 					if (args[9].startsWith("http://") || args[9].startsWith("https://")
 							|| args[9].split(".").length == 4)
 						kill_exec_api = args[9];
@@ -584,10 +584,10 @@ public class Driver {
 				break;
 
 			case 11:
-				if (!args[0].equals("null"))
+				if (!args[0].equalsIgnoreCase("null"))
 					exec_token = args[0];
 
-				if (!args[1].equals("null")) {
+				if (!args[1].equalsIgnoreCase("null")) {
 
 					if (args[1].startsWith("http://") || args[1].startsWith("https://")
 							|| args[1].split(".").length == 4)
@@ -597,7 +597,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[2].equals("null")) {
+				if (!args[2].equalsIgnoreCase("null")) {
 					if (args[2].startsWith("http://") || args[2].startsWith("https://")
 							|| args[2].split(".").length == 4)
 						check_status_api = args[2];
@@ -606,7 +606,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[3].equals("null")) {
+				if (!args[3].equalsIgnoreCase("null")) {
 					if (args[3].startsWith("http://") || args[2].startsWith("https://")
 							|| args[3].split(".").length == 4)
 						search_api = args[3];
@@ -615,14 +615,14 @@ public class Driver {
 					}
 				}
 
-				if (!args[4].equals("null"))
+				if (!args[4].equalsIgnoreCase("null"))
 					request_flag = Boolean.parseBoolean(args[4]);
 
-				if (!args[5].equals("null"))
+				if (!args[5].equalsIgnoreCase("null"))
 					response_flag = Boolean.parseBoolean(args[5]);
 
 				try {
-					if (!args[6].equals("null"))
+					if (!args[6].equalsIgnoreCase("null"))
 						poll_rate = Integer.parseInt(args[6]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(poll_not_num_msg);
@@ -630,7 +630,7 @@ public class Driver {
 				}
 
 				try {
-					if (!args[7].equals("null"))
+					if (!args[7].equalsIgnoreCase("null"))
 						threshold = Integer.parseInt(args[7]);
 				} catch (NumberFormatException NFE) {
 					System.out.println(threshold_not_num_msg);
@@ -638,23 +638,23 @@ public class Driver {
 					// NFE.printStackTrace();
 				}
 
-				// if (!args[8].equals("null")) {
+				// if (!args[8].equalsIgnoreCase("null")) {
 
-				// 	if (args[8].toLowerCase().startsWith("su-"))
-				// 		suite_id = args[8];
-				// 	else {
-				// 		System.out.println(invalid_suite_id_msg);
-				// 		System.out.println("EXECUTION FAILED!");
-				// 		System.exit(1);
-				// 	}
-
-				// } else {
-				// 	System.out.println(invalid_suite_id_msg);
-				// 	System.out.println("EXECUTION FAILED!");
-				// 	System.exit(1);
+				// if (args[8].toLowerCase().startsWith("su-"))
+				// suite_id = args[8];
+				// else {
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
 				// }
 
-				if (!args[9].equals("null")) {
+				// } else {
+				// System.out.println(invalid_suite_id_msg);
+				// System.out.println("EXECUTION FAILED!");
+				// System.exit(1);
+				// }
+
+				if (!args[9].equalsIgnoreCase("null")) {
 					if (args[9].startsWith("http://") || args[9].startsWith("https://")
 							|| args[9].split(".").length == 4)
 						kill_exec_api = args[9];
@@ -663,7 +663,7 @@ public class Driver {
 					}
 				}
 
-				if (!args[10].equals("null")) {
+				if (!args[10].equalsIgnoreCase("null")) {
 					if (args[10].startsWith("http://") || args[10].startsWith("https://")
 							|| args[10].split(".").length == 4)
 						Slackbot.webhook_url = args[10];
