@@ -8,6 +8,12 @@ This connector can work with major CI/CD tools like:
   - Azure Pipeline
 <hr>   
 
+<h1 style="text-align: center;">INTEGRATION WITH JENKINS</h1>
+
+## Steps to configure the pipeline:
+``````
+<hr>   
+
 <h1 style="text-align: center;">INTEGRATION WITH CONCOURSE CI</h1>
 
 ## Command to set the target:
@@ -30,3 +36,21 @@ This connector can work with major CI/CD tools like:
 
 ## Command to watch build logs of a specific job with build number
 ```fly -t sqa-connector watch --job {{suite_name_or_id}}/suite-execution-build-trigger --build NUM```
+<hr>   
+
+<h1 style="text-align: center;">INTEGRATION WITH GITLAB CI</h1>
+
+## Steps to configure the pipeline:
+``````
+<hr>   
+
+<h1 style="text-align: center;">INTEGRATION WITH BAMBOO CI</h1>
+
+## Steps to configure the pipeline:
+``````
+<hr>   
+
+<h1 style="text-align: center;">INTEGRATION WITH AZURE PIPELINES</h1>
+
+## Steps to configure the pipeline:
+``````
