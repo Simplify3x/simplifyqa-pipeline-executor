@@ -11,7 +11,7 @@ This connector can work with major CI/CD tools like:
 <h1 style="text-align: center;">INTEGRATION WITH JENKINS</h1>
 
 ## Steps to configure the pipeline:
-``````
+```lorem ipsum```
 <hr>   
 
 <h1 style="text-align: center;">INTEGRATION WITH CONCOURSE CI</h1>
@@ -41,13 +41,13 @@ This connector can work with major CI/CD tools like:
 <h1 style="text-align: center;">INTEGRATION WITH GITLAB CI</h1>
 
 ## Steps to configure the pipeline:
-``````
+```lorem ipsum```
 <hr>   
 
 <h1 style="text-align: center;">INTEGRATION WITH BAMBOO CI</h1>
 
 ## Steps to configure the pipeline:
-``````
+```lorem ipsum```
 <hr>   
 
 <h1 style="text-align: center;">INTEGRATION WITH AZURE PIPELINES</h1>
