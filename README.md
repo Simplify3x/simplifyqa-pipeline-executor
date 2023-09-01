@@ -53,4 +53,4 @@ This connector can work with major CI/CD tools like:
 <h1 style="text-align: center;">INTEGRATION WITH AZURE PIPELINES</h1>
 
 ## Steps to configure the pipeline:
-``````
+```lorem ipsum```
