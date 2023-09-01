@@ -19,27 +19,17 @@ import org.json.JSONObject;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import searchapi.Search;
-
 public class Executor {
-
-	// Vulnerabilities identified so far:-
-
-	// 1. Cannot find an alternative to hudson.util.Secret which is used to conceal
-	// the token and the auth key
-
-	// 2. Cannot find an alternatice to hudson.model.TaskListener which is used to
-	// log the process
 
 	// Request body resources paths
 	private static String req_temp_path = "src/main/resources/templates/requests/";
 	private static String build_task_req_body_path = req_temp_path + "build_task_request_body.json.txt";
 	private static String check_status_req_body_path = req_temp_path + "check_status_request_body.json.txt";
-	private static String search_api_req_body_path = req_temp_path + "search_api.json.txt";
+	//private static String search_api_req_body_path = req_temp_path + "search_api.json.txt";
 	private static String kill_exec_api_req_body_path = req_temp_path + "kill_exec_api.json.txt";
 	static String slack_req_body_path = req_temp_path + "slack_webhook_api.json.txt";
 
-	private String build_task_request_body, check_status_request_body, search_api_request_body;
+	private String build_task_request_body, check_status_request_body;
 
 	// API LINKS
 	private static String build_task_api, check_status_api, search_api, kill_exec_api;
