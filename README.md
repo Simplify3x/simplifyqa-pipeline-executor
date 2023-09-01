@@ -91,5 +91,4 @@ This connector can work with major CI/CD tools like:
 
 > ## Step 4: Watch the execution logs using the console window
 ![image](https://github.com/Simplify3x/simplifyqa-pipeline-executor/assets/78360785/026902d1-f4e8-42fb-bc20-8f9c36b6810b)
-![Uploading image.png…]()
-
+![image](https://github.com/Simplify3x/simplifyqa-pipeline-executor/assets/78360785/2513d4e1-e9b7-41e3-8571-e7fc7204fd75)
