@@ -1,5 +1,5 @@
 # simplifyqa-pipeline-executor
-This project is a standalone application that is intended to be used in conjunction with SimplifyQA pipeline and major CI tools.
+This project is a standalone application that is intended to be used in conjunction with SimplifyQA pipelines.<br/>
 This connector can work with major CI/CD tools like:
   - Jenkins
   - Concourse CI
