@@ -19,8 +19,15 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultWorkingDirectory)/connector/target'
-    Contents: '**/*.jar'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/target'
+    preserveTimestamp: true
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultWorkingDirectory)/connector/src'
+    Contents: '**/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/src'
     preserveTimestamp: true
     
 - task: PublishBuildArtifacts@1
@@ -31,5 +38,7 @@ steps:
 
 - script: |
     echo "\n******************Running Compiled JAR File******************\n"
+    ls -al
     cd $(Build.ArtifactStagingDirectory)
+    ls -al
     java -jar target/connector-1.0-jar-with-dependencies.jar $(EXEC_TOKEN) $(BUILD_API) $(STATUS_API) $(SEARCH_API) $(REQ_FLAG) $(RESP_FLAG) $(POLL_RATE) $(THRESHOLD) $(SUITE_ID) $(KILL_API) $(SLACK_WEBHOOK)
