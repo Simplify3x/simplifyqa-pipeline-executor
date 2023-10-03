@@ -82,9 +82,6 @@ public class Executor {
 					new TypeReference<Map<String, Object>>() {
 					});
 
-			this.exec_id = this.map.get("executionId").toString();
-			this.customer_id = this.map.get("customerId").toString();
-
 			if (!Boolean.parseBoolean(this.map.get("success").toString())) {
 				this.temp = "[" + dtf.format(LocalDateTime.now()) + "] "
 						+ "EXECUTION STATUS: failed due to the following reason: " + this.map.get("error").toString()
@@ -108,6 +105,9 @@ public class Executor {
 				System.out.println("EXECUTION FAILED: Exiting with a non-zero exit code.");
 				System.exit(1);
 			}
+
+			this.exec_id = this.map.get("executionId").toString();
+			this.customer_id = this.map.get("customerId").toString();
 
 			// REQUEST BODY FOR CHECK TESTCASE STATUS API CALL
 			// check_status_request_body.put("token", token);
